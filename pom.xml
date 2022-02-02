@@ -6,13 +6,13 @@
         <version>9</version>
     </parent>
 
-    <groupId>org.graylog2</groupId>
+    <groupId>io.split</groupId>
     <artifactId>syslog4j</artifactId>
-    <version>0.9.61-SNAPSHOT</version>
+    <version>0.9.62</version>
     <packaging>jar</packaging>
 
     <name>syslog4j-graylog2</name>
-    <url>https://github.com/graylog-labs/syslog4j-graylog2</url>
+    <url>https://github.com/splitio/syslog4j-graylog2</url>
 
     <description>
         Syslog4j provides client and server implementations of the BSD Syslog protocol (RFC 3164) and the draft "structured syslog" protocol (RFC Draft).
@@ -27,21 +27,21 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/graylog-labs/syslog4j-graylog2</url>
-        <connection>scm:git:git@github.com:graylog-labs/syslog4j-graylog2.git</connection>
-        <developerConnection>scm:git:git@github.com:graylog-labs/syslog4j-graylog2.git</developerConnection>
+        <url>https://github.com/splitio/syslog4j-graylog2</url>
+        <connection>scm:git:git@github.com:splitio/syslog4j-graylog2.git</connection>
+        <developerConnection>scm:git:git@github.com:splitio/syslog4j-graylog2.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/graylog-labs/syslog4j-graylog2/issues</url>
+        <url>https://github.com/splitio/syslog4j-graylog2/issues</url>
     </issueManagement>
 
-    <ciManagement>
+    <!--<ciManagement>
         <system>Travis CI</system>
-        <url>https://travis-ci.org/graylog-labs/syslog4j-graylog2</url>
-    </ciManagement>
+        <url>https://travis-ci.org/splitio/syslog4j-graylog2</url>
+    </ciManagement>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -86,10 +86,9 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.sun.jna</groupId>
+            <groupId>net.java.dev.jna</groupId>
             <artifactId>jna</artifactId>
-            <version>3.0.9</version>
-            <optional>true</optional>
+            <version>5.7.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
