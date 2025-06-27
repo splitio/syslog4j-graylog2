@@ -82,7 +82,7 @@ public abstract class AbstractSyslogMessageProcessor implements SyslogMessagePro
 
         buffer.append(' ');
     }
-    
+
     protected abstract void appendTimestamp(StringBuffer buffer, Date datetime);
-    
+
 }

@@ -86,7 +86,7 @@ package org.graylog2.syslog4j.util;
  * @version 2.2.2
  */
 public class Base64 {
-    
+
 /* ********  P U B L I C   F I E L D S  ******** */
 
 
@@ -134,8 +134,8 @@ public class Base64 {
      * <a href="http://www.faqs.org/qa/rfcc-1940.html">http://www.faqs.org/qa/rfcc-1940.html</a>.
      */
     public final static int ORDERED = 32;
-    
-    
+
+
 /* ********  P R I V A T E   F I E L D S  ******** */
 
 
@@ -168,7 +168,7 @@ public class Base64 {
     private final static byte WHITE_SPACE_ENC = -5; // Indicates white space in encoding
     private final static byte EQUALS_SIGN_ENC = -1; // Indicates equals sign in encoding
 
-	
+
 /* ********  S T A N D A R D   B A S E 6 4   A L P H A B E T  ******** */
 
     /**
@@ -229,8 +229,8 @@ public class Base64 {
         -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,     // Decimal 231 - 243
         -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9         // Decimal 244 - 255 */
             };
-	
-	
+
+
 /* ********  U R L   S A F E   B A S E 6 4   A L P H A B E T  ******** */
 
     /**
@@ -360,7 +360,7 @@ public class Base64 {
         -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9         // Decimal 244 - 255 */
             };
 
-	
+
 /* ********  D E T E R M I N E   W H I C H   A L H A B E T  ******** */
 
 
@@ -419,10 +419,10 @@ public class Base64 {
             }   // end if: encode
             else if (flag.equals("-d")) {
                 Base64.decodeFileToFile(infile, outfile);
-            }   // end else if: decode    
+            }   // end else if: decode
             else {
                 usage("Unknown flag: " + flag);
-            }   // end else    
+            }   // end else
         }   // end else
     }   // end main
 
@@ -435,8 +435,8 @@ public class Base64 {
         System.err.println(msg);
         System.err.println("Usage: java Base64 -e|-d inputfile outputfile");
     }   // end usage
-    
-    
+
+
 /* ********  E N C O D I N G   M E T H O D S  ******** */
 
 
@@ -489,7 +489,7 @@ public class Base64 {
             byte[] destination, int destOffset, int options) {
         byte[] ALPHABET = getAlphabet(options);
 
-        //           1         2         3  
+        //           1         2         3
         // 01234567890123456789012345678901 Bit position
         // --------000000001111111122222222 Array position from threeBytes
         // --------|    ||    ||    ||    | Six bit groups to index ALPHABET
@@ -802,11 +802,11 @@ public class Base64 {
         }   // end else: don't compress
 
     }   // end encodeBytes
-    
 
-    
-    
-    
+
+
+
+
 /* ********  D E C O D I N G   M E T H O D S  ******** */
 
 
@@ -940,7 +940,7 @@ public class Base64 {
             else {
                 System.err.println("Bad Base64 input character at " + i + ": " + source[i] + "(decimal)");
                 return null;
-            }   // end else: 
+            }   // end else:
         }   // each input character
 
         byte[] out = new byte[outBuffPosn];
@@ -1321,8 +1321,8 @@ public class Base64 {
 
         return success;
     }   // end decodeFileToFile
-    
-    
+
+
     /* ********  I N N E R   C L A S S   I N P U T S T R E A M  ******** */
 
 
@@ -1459,7 +1459,7 @@ public class Base64 {
                     else {
                         // Must have broken out from above.
                         throw new java.io.IOException("Improperly padded Base64 input.");
-                    }   // end 
+                    }   // end
 
                 }   // end else: decode
             }   // end else: get data
@@ -1529,12 +1529,12 @@ public class Base64 {
         }   // end read
 
     }   // end inner class InputStream
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     /* ********  I N N E R   C L A S S   O U T P U T S T R E A M  ******** */
 
 

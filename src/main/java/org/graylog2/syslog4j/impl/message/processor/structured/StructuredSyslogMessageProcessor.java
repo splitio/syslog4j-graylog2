@@ -34,10 +34,10 @@ import org.graylog2.syslog4j.impl.message.structured.StructuredSyslogMessage;
  * @version $Id: StructuredSyslogMessageProcessor.java,v 1.4 2011/01/11 05:11:13 cvs Exp $
  */
 public class StructuredSyslogMessageProcessor extends AbstractSyslogMessageProcessor {
-    private static final long   serialVersionUID = -1563777226913475257L;    
-    
+    private static final long   serialVersionUID = -1563777226913475257L;
+
     public static String VERSION = "1";
-    
+
     private static final  StructuredSyslogMessageProcessor INSTANCE = new StructuredSyslogMessageProcessor();
 
     protected static StructuredSyslogMessageProcessor defaultInstance = INSTANCE;
@@ -91,7 +91,7 @@ public class StructuredSyslogMessageProcessor extends AbstractSyslogMessageProce
 
 	/* (non-Javadoc)
 	 * @see org.graylog2.syslog4j.impl.message.processor.AbstractSyslogMessageProcessor#appendTimestamp(java.lang.StringBuffer, java.util.Date)
-	 * 
+	 *
 	 * This is compatible with RFC5424 protocol.
 	 */
 	@Override
@@ -100,17 +100,17 @@ public class StructuredSyslogMessageProcessor extends AbstractSyslogMessageProce
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(datetime.getTime());
         String formatedTimestamp = formatter.format(calendar.getTime());
-        buffer.append(formatedTimestamp);	
+        buffer.append(formatedTimestamp);
         buffer.append(' ');
     }
 
     /* (non-Javadoc)
      * @see org.graylog2.syslog4j.SyslogMessageProcessorIF#createSyslogHeader(int, int, java.lang.String, boolean, boolean)
-     * 
+     *
      * This is compatible with RFC5424 protocol.
-     * 
+     *
      * RFC5424 does not allow flags of sendLocalTimestamp and sendLocalName be off and therefore the incoming flags will not be used in this method.
-     * 
+     *
      */
     public String createSyslogHeader(int facility, int level, String localName, boolean sendLocalTimestamp, boolean sendLocalName) {
         return createSyslogHeaderInner(facility, level, localName, new Date());
@@ -118,15 +118,15 @@ public class StructuredSyslogMessageProcessor extends AbstractSyslogMessageProce
 
     /* (non-Javadoc)
      * @see org.graylog2.syslog4j.SyslogMessageProcessorIF#createSyslogHeader(int, int, java.lang.String, boolean, java.util.Date)
-     * 
+     *
      * This is compatible with RFC5424 protocol.
-     * 
+     *
      * RFC5424 does not allow sendLocalName flag to be off and therefore sendLocalName will not be used in this method.
      */
-    public String createSyslogHeader(int facility, int level, String localName, boolean sendLocalName, Date datetime) { 	
+    public String createSyslogHeader(int facility, int level, String localName, boolean sendLocalName, Date datetime) {
     	return createSyslogHeaderInner(facility, level, localName, datetime);
     }
-    
+
     private String createSyslogHeaderInner(int facility, int level, String localName, Date datetime) {
         StringBuffer buffer = new StringBuffer();
         appendPriority(buffer, facility, level);
