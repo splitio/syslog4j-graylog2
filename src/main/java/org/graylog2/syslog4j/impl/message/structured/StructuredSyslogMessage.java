@@ -96,7 +96,7 @@ public class StructuredSyslogMessage extends AbstractSyslogMessage implements St
         }
 
         int start = stringMessage.indexOf('[');
-        int end = -1;  
+        int end = -1;
 
          // Check correct format
         if (start <= 0)

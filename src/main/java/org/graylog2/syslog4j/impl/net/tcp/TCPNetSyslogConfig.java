@@ -47,12 +47,12 @@ public class TCPNetSyslogConfig extends AbstractNetSyslogConfig implements TCPNe
 
 	/**
 	 * useFrameHeader flag enables frame header.
-	 * 
+	 *
 	 * Frame header is sometimes used when writing the syslog message (for example in syslog-ng server syslog() driver).
-	 * It does not allow delimiterSequence; its structure is : digit(size of message byte array) + space + syslog message  
+	 * It does not allow delimiterSequence; its structure is : digit(size of message byte array) + space + syslog message
 	 * e.g. where the size of message (byte array) is 89:
 	 * 89 <165>1 2003-10-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [exampleSDID@32473]
-	 * 
+	 *
 	 */
 	private boolean useOctetCounting;
 
@@ -160,7 +160,7 @@ public class TCPNetSyslogConfig extends AbstractNetSyslogConfig implements TCPNe
     public void setFreshConnectionInterval(int freshConnectionInterval) {
         this.freshConnectionInterval = freshConnectionInterval;
     }
-    
+
     public void setUseOctetCounting(boolean useOctetCounting) {
 		this.useOctetCounting = useOctetCounting;
 	}

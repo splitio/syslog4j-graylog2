@@ -22,7 +22,7 @@ public interface SyslogIF extends SyslogConstants {
     public void backLog(int level, String message, Throwable reasonThrowable);
 
     public void backLog(int level, String message, String reason);
-    
+
     public void log(int level, String message);
 
     public void log(int level, String message, Date datetime);
@@ -44,7 +44,7 @@ public interface SyslogIF extends SyslogConstants {
     public void emergency(String message);
 
     public void log(int level, SyslogMessageIF message);
-    
+
     public void log(int level, SyslogMessageIF message, Date datetime);
 
     public void debug(SyslogMessageIF message);

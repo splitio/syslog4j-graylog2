@@ -39,7 +39,7 @@ public class SyslogMessageProcessor extends AbstractSyslogMessageProcessor {
 
     /* (non-Javadoc)
      * @see org.graylog2.syslog4j.impl.message.processor.AbstractSyslogMessageProcessor#appendTimestamp(java.lang.StringBuffer, java.util.Date)
-     * 
+     *
      * This is compatible with BSD protocol
      */
     @Override
@@ -61,7 +61,7 @@ public class SyslogMessageProcessor extends AbstractSyslogMessageProcessor {
 
     /* (non-Javadoc)
      * @see org.graylog2.syslog4j.SyslogMessageProcessorIF#createSyslogHeader(int, int, java.lang.String, boolean, boolean)
-     * 
+     *
      * This is compatible with BSD protocol
      */
     public String createSyslogHeader(int facility, int level, String localName, boolean sendLocalTimestamp, boolean sendLocalName) {
@@ -82,7 +82,7 @@ public class SyslogMessageProcessor extends AbstractSyslogMessageProcessor {
 
     /* (non-Javadoc)
      * @see org.graylog2.syslog4j.SyslogMessageProcessorIF#createSyslogHeader(int, int, java.lang.String, boolean, java.util.Date)
-     * 
+     *
      * This is compatible with BSD protocol
      */
     public String createSyslogHeader(int facility, int level, String localName, boolean sendLocalName, Date datetime) {

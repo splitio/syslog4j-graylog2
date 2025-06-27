@@ -47,6 +47,6 @@ public interface TCPNetSyslogConfigIF extends AbstractNetSyslogConfigIF {
     public void setFreshConnectionInterval(int interval);
 
     public void setUseOctetCounting(boolean useFrameHeader);
-    
+
 	public boolean isUseOctetCounting();
 }

@@ -139,16 +139,16 @@ public class TCPNetSyslogWriter extends AbstractSyslogWriter {
                 }
 
                 OutputStream os = currentSocket.getOutputStream();
-                
+
                 String frameHeader = "";
                 if(this.tcpNetSyslogConfig.isUseOctetCounting()){
                 	frameHeader = message.length + " ";
                 }
-                
+
                 if (this.tcpNetSyslogConfig.isSetBufferSize()) {
                     currentSocket.setSendBufferSize(message.length + frameHeader.length());
                 }
-                
+
                 os.write(frameHeader.getBytes());
                 os.write(message);
 
@@ -157,7 +157,7 @@ public class TCPNetSyslogWriter extends AbstractSyslogWriter {
                     if (delimiterSequence != null && delimiterSequence.length > 0) {
                         os.write(delimiterSequence);
                     }
-                }               
+                }
 
                 this.syslog.setBackLogStatus(false);
 

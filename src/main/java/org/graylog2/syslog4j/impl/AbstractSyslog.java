@@ -124,7 +124,7 @@ public abstract class AbstractSyslog implements SyslogIF {
             log(getMessageProcessor(), level, message);
         }
     }
-    
+
     public void log(int level, String message, Date datetime) {
         if (this.syslogConfig.isUseStructuredData()) {
             StructuredSyslogMessageIF structuredMessage = new StructuredSyslogMessage(null, null, null, message);
@@ -149,7 +149,7 @@ public abstract class AbstractSyslog implements SyslogIF {
             log(getMessageProcessor(), level, message.createMessage());
         }
     }
-    
+
     public void log(int level, SyslogMessageIF message, Date datetime) {
         if (message instanceof StructuredSyslogMessageIF) {
             if (getMessageProcessor() instanceof StructuredSyslogMessageProcessor) {
@@ -295,9 +295,9 @@ public abstract class AbstractSyslog implements SyslogIF {
             }
         }
     }
-    
+
     protected void write(SyslogMessageProcessorIF messageProcessor, int level, String message, String header) throws SyslogRuntimeException {
- 
+
         byte[] h = SyslogUtility.getBytes(this.syslogConfig, header);
         byte[] m = SyslogUtility.getBytes(this.syslogConfig, message);
 
