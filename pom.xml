@@ -49,34 +49,16 @@
 			<url>https://fme-079419646996.d.codeartifact.us-east-1.amazonaws.com/maven/maven-fme/</url>
 		</pluginRepository>
 	</pluginRepositories>
-	<profiles>
-		<profile>
-			<id>codeartifact</id>
-			<distributionManagement>
-				<repository>
-					<id>maven-fme</id>
-					<url>https://fme-079419646996.d.codeartifact.us-east-1.amazonaws.com/maven/maven-fme/</url>
-				</repository>
-				<snapshotRepository>
-					<id>maven-fme</id>
-					<url>https://fme-079419646996.d.codeartifact.us-east-1.amazonaws.com/maven/maven-fme/</url>
-				</snapshotRepository>
-			</distributionManagement>
-		</profile>
-		<profile>
-			<id>artifactory</id>
-			<distributionManagement>
-				<repository>
-					<id>maven-dev</id>
-					<url>https://splitio.jfrog.io/artifactory/maven-dev/</url>
-				</repository>
-				<snapshotRepository>
-					<id>maven-dev</id>
-					<url>https://splitio.jfrog.io/artifactory/maven-dev/</url>
-				</snapshotRepository>
-			</distributionManagement>
-		</profile>
-	</profiles>
+	<distributionManagement>
+		<repository>
+			<id>maven-fme</id>
+			<url>https://fme-079419646996.d.codeartifact.us-east-1.amazonaws.com/maven/maven-fme/</url>
+		</repository>
+		<snapshotRepository>
+			<id>maven-fme</id>
+			<url>https://fme-079419646996.d.codeartifact.us-east-1.amazonaws.com/maven/maven-fme/</url>
+		</snapshotRepository>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>joda-time</groupId>
